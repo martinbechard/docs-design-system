@@ -1,0 +1,6 @@
+__pycache__/
+*.py[cod]
+
+# Raw model-run evidence stays local; curated reports belong in evals/results/.
+evals/outputs/
+evals/coordinator/outputs/

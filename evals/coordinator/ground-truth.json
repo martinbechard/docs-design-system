@@ -1,0 +1,7 @@
+{
+  "accept-complete": {"status": "ACCEPTED", "dispatches": ["page-shell:shared", "page-shell:page-shell"], "coverage": {"required": 2, "completed": 2, "missing": []}, "finding_ids": [], "conflict_ids": [], "model_ranking": []},
+  "reject-deduplicate": {"status": "REJECTED", "dispatches": ["forms:shared", "forms:forms"], "coverage": {"required": 2, "completed": 2, "missing": []}, "finding_ids": ["F-FOCUS", "F-LABEL"], "conflict_ids": [], "model_ranking": []},
+  "block-missing-malformed": {"status": "BLOCKED", "dispatches": ["content:shared", "content:content", "content:accessibility"], "coverage": {"required": 3, "completed": 1, "missing": ["content:content", "content:accessibility"]}, "finding_ids": [], "conflict_ids": [], "model_ranking": []},
+  "block-conflict": {"status": "BLOCKED", "dispatches": ["diagrams:diagrams"], "coverage": {"required": 1, "completed": 1, "missing": []}, "finding_ids": [], "conflict_ids": ["diagrams:diagrams:DDS-DIA-004"], "model_ranking": []},
+  "rank-cost-band": {"status": "ACCEPTED", "dispatches": [], "coverage": {"required": 0, "completed": 0, "missing": []}, "finding_ids": [], "conflict_ids": [], "model_ranking": ["fast-within-band", "slow-cheapest", "fast-outside-band", "cheap-lower-accuracy"]}
+}

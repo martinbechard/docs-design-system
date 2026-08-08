@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["status", "dispatches", "coverage", "finding_ids", "conflict_ids", "model_ranking", "rationale"],
+  "properties": {
+    "status": {"enum": ["ACCEPTED", "REJECTED", "BLOCKED"]},
+    "dispatches": {"type": "array", "items": {"type": "string"}},
+    "coverage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["required", "completed", "missing"],
+      "properties": {
+        "required": {"type": "integer", "minimum": 0},
+        "completed": {"type": "integer", "minimum": 0},
+        "missing": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "finding_ids": {"type": "array", "items": {"type": "string"}},
+    "conflict_ids": {"type": "array", "items": {"type": "string"}},
+    "model_ranking": {"type": "array", "items": {"type": "string"}},
+    "rationale": {"type": "string", "minLength": 1}
+  }
+}

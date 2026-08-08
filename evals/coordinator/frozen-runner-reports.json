@@ -1,0 +1,12 @@
+{
+  "runner_candidate": "luna-medium",
+  "model": "gpt-5.6-luna",
+  "effort": "medium",
+  "reports": [
+    {"id": "wide", "path": "evals/outputs/wide/luna-medium/01-wide/response.json", "sha256": "b7f9430a3583e34d82fb3e9a8f89a9e185d505e171c1c1eb62d4c00eb74defd4"},
+    {"id": "semifinal", "path": "evals/outputs/semifinal/luna-medium/02-semifinal/response.json", "sha256": "526991f1816cbceb883497545e14e71c8818194387b0c37c9fd66e02c66542f7"},
+    {"id": "final-a", "path": "evals/outputs/final/luna-medium/03-final-a/response.json", "sha256": "0d5bf9aa296b622b32336e0406c9b4ca92a48e7698acb8df314cd537f2376a82"},
+    {"id": "final-b", "path": "evals/outputs/final/luna-medium/04-final-b/response.json", "sha256": "cdebee5a721f36d2ecb2044bb46d8dfa32215e1227ca5cd82ee18034220a3c62"},
+    {"id": "clean", "path": "evals/outputs/final/luna-medium/05-final-clean/response.json", "sha256": "a03769b43015d6f74e38f0bd80a18a8f5182053de505457414f23cc1afda9a35"}
+  ]
+}

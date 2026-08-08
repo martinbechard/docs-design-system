@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "matching_key": ["rule_id", "locator"],
+  "fixtures": {
+    "01-wide.html": {
+      "verdict": "FAIL",
+      "defects": [
+        {"defect_id": "wide-1", "rule_id": "DOC-LANG", "locator": "html", "severity": "major"},
+        {"defect_id": "wide-2", "rule_id": "DOC-IMG-ALT", "locator": "#auth-flow", "severity": "major"},
+        {"defect_id": "wide-3", "rule_id": "DOC-LINK-TEXT", "locator": "#setup-link", "severity": "minor"}
+      ]
+    },
+    "02-semifinal.html": {
+      "verdict": "FAIL",
+      "defects": [
+        {"defect_id": "semi-1", "rule_id": "DOC-H1", "locator": "#region-title", "severity": "major"},
+        {"defect_id": "semi-2", "rule_id": "DOC-LABEL", "locator": "#region", "severity": "major"}
+      ]
+    },
+    "03-final-a.html": {
+      "verdict": "FAIL",
+      "defects": [
+        {"defect_id": "final-a-1", "rule_id": "DOC-HEADING-ORDER", "locator": "#token-options", "severity": "minor"}
+      ]
+    },
+    "04-final-b.html": {
+      "verdict": "FAIL",
+      "defects": [
+        {"defect_id": "final-b-1", "rule_id": "DOC-META-DESC", "locator": "head", "severity": "minor"},
+        {"defect_id": "final-b-2", "rule_id": "DOC-EMPTY-HREF", "locator": "#reference-link", "severity": "major"}
+      ]
+    },
+    "05-final-clean.html": {
+      "verdict": "PASS",
+      "defects": []
+    }
+  }
+}

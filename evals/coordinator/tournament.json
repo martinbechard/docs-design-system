@@ -1,0 +1,15 @@
+{
+  "cost_equivalence_band": 0.15,
+  "credit_rates_per_million_tokens": {
+    "gpt-5.5": {"input_tokens": 125.0, "cached_input_tokens": 12.5, "output_tokens": 750.0},
+    "gpt-5.6-terra": {"input_tokens": 62.5, "cached_input_tokens": 6.25, "output_tokens": 375.0},
+    "gpt-5.6-luna": {"input_tokens": 25.0, "cached_input_tokens": 2.5, "output_tokens": 150.0},
+    "gpt-5.3-codex-spark": null
+  },
+  "candidates": [
+    {"id": "luna-medium", "model": "gpt-5.6-luna", "effort": "medium"},
+    {"id": "terra-low", "model": "gpt-5.6-terra", "effort": "low"},
+    {"id": "spark-medium", "model": "gpt-5.3-codex-spark", "effort": "medium"},
+    {"id": "gpt55-high", "model": "gpt-5.5", "effort": "high"}
+  ]
+}

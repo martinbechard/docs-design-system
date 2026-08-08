@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/docs-review-output.schema.json",
+  "title": "Documentation checklist review",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["verdict", "issues"],
+  "properties": {
+    "verdict": {"type": "string", "enum": ["PASS", "FAIL"]},
+    "issues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["rule_id", "locator", "severity", "evidence"],
+        "properties": {
+          "rule_id": {
+            "type": "string",
+            "enum": ["DOC-LANG", "DOC-TITLE", "DOC-H1", "DOC-IMG-ALT", "DOC-LINK-TEXT", "DOC-HEADING-ORDER", "DOC-LABEL", "DOC-EMPTY-HREF", "DOC-META-DESC"]
+          },
+          "locator": {"type": "string", "minLength": 1},
+          "severity": {"type": "string", "enum": ["minor", "major"]},
+          "evidence": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  }
+}

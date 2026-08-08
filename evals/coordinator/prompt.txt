@@ -1,0 +1,20 @@
+You are testing the documentation-design-system review coordinator. Return only JSON matching the supplied schema.
+
+Goal:
+Create the dispatch plan and reconcile the supplied runner reports. Do not perform checklist review yourself.
+
+The checklist-runner candidate is fixed as luna-medium. Every supplied report records that same runner candidate. Only the coordinator model varies in this tournament.
+
+Rules:
+- Dispatch every required assignment exactly once by copying its assignment ID into dispatches.
+- A valid report completes its assignment. A malformed report (`valid: false`) does not complete it.
+- Missing contains every required assignment without at least one valid report.
+- Deduplicate finding IDs across valid reports.
+- If valid reports disagree on an item's PASS/FAIL/NOT TESTED result, add `<assignment>:<item-id>` to conflict_ids and do not include findings from that conflicted item.
+- Status is BLOCKED for missing coverage or conflicts; otherwise REJECTED when any valid report has a FAIL; otherwise ACCEPTED.
+- When model candidates exist, rank strict accuracy first. Within equal accuracy, costs within 15 percent of the cheapest candidate are equivalent and lower wall time wins inside that band. More expensive cost bands follow. Lower-accuracy candidates always follow higher-accuracy candidates.
+- Lists must preserve required-assignment order where applicable. finding_ids and conflict_ids use first-observed order.
+- Rationale briefly states the decisive evidence.
+
+Context:
+{{case_json}}

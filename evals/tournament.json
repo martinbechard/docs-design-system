@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "accuracy_equivalence_band": 0.0,
+  "cost_equivalence_band": 0.15,
+  "cost_proxy_weights": {"input_tokens": 1.0, "cached_input_tokens": 0.1, "output_tokens": 3.0},
+  "credit_rates_per_million_tokens": {
+    "gpt-5.5": {"input_tokens": 125.0, "cached_input_tokens": 12.5, "output_tokens": 750.0},
+    "gpt-5.6-terra": {"input_tokens": 62.5, "cached_input_tokens": 6.25, "output_tokens": 375.0},
+    "gpt-5.6-luna": {"input_tokens": 25.0, "cached_input_tokens": 2.5, "output_tokens": 150.0},
+    "gpt-5.4-mini": {"input_tokens": 18.75, "cached_input_tokens": 1.875, "output_tokens": 113.0},
+    "gpt-5.3-codex-spark": null
+  },
+  "candidates": [
+    {"id": "spark-low", "model": "gpt-5.3-codex-spark", "effort": "low"},
+    {"id": "spark-medium", "model": "gpt-5.3-codex-spark", "effort": "medium"},
+    {"id": "luna-low", "model": "gpt-5.6-luna", "effort": "low"},
+    {"id": "luna-medium", "model": "gpt-5.6-luna", "effort": "medium"},
+    {"id": "mini-low", "model": "gpt-5.4-mini", "effort": "low"},
+    {"id": "mini-medium", "model": "gpt-5.4-mini", "effort": "medium"},
+    {"id": "terra-low", "model": "gpt-5.6-terra", "effort": "low"},
+    {"id": "terra-medium", "model": "gpt-5.6-terra", "effort": "medium"},
+    {"id": "gpt55-low", "model": "gpt-5.5", "effort": "low"},
+    {"id": "gpt55-medium", "model": "gpt-5.5", "effort": "medium"}
+  ],
+  "stages": [
+    {"id": "wide", "fixtures": ["01-wide.html"], "advance": 5},
+    {"id": "semifinal", "fixtures": ["02-semifinal.html"], "advance": 3},
+    {"id": "final", "fixtures": ["03-final-a.html", "04-final-b.html", "05-final-clean.html"], "advance": 1}
+  ]
+}

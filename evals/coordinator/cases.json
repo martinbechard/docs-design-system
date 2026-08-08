@@ -1,0 +1,53 @@
+{
+  "runner_candidate": "luna-medium",
+  "runner_reports_are_frozen": true,
+  "cases": [
+    {
+      "id": "accept-complete",
+      "required_assignments": ["page-shell:shared", "page-shell:page-shell"],
+      "runner_reports": [
+        {"assignment": "page-shell:shared", "runner_candidate": "luna-medium", "source_report": "clean", "valid": true, "items": {"DDS-COM-001": "PASS", "DDS-COM-002": "PASS"}, "finding_ids": []},
+        {"assignment": "page-shell:page-shell", "runner_candidate": "luna-medium", "source_report": "clean", "valid": true, "items": {"DDS-SHL-001": "PASS", "DDS-SHL-002": "PASS"}, "finding_ids": []}
+      ],
+      "model_candidates": []
+    },
+    {
+      "id": "reject-deduplicate",
+      "required_assignments": ["forms:shared", "forms:forms"],
+      "runner_reports": [
+        {"assignment": "forms:shared", "runner_candidate": "luna-medium", "source_report": "wide", "valid": true, "items": {"DDS-COM-007": "FAIL"}, "finding_ids": ["F-FOCUS"]},
+        {"assignment": "forms:forms", "runner_candidate": "luna-medium", "source_report": "semifinal", "valid": true, "items": {"DDS-FRM-003": "FAIL"}, "finding_ids": ["F-FOCUS", "F-LABEL"]}
+      ],
+      "model_candidates": []
+    },
+    {
+      "id": "block-missing-malformed",
+      "required_assignments": ["content:shared", "content:content", "content:accessibility"],
+      "runner_reports": [
+        {"assignment": "content:shared", "runner_candidate": "luna-medium", "source_report": "clean", "valid": true, "items": {"DDS-COM-001": "PASS"}, "finding_ids": []},
+        {"assignment": "content:content", "runner_candidate": "luna-medium", "source_report": "final-a", "mutation": "malformed", "valid": false, "items": {}, "finding_ids": []}
+      ],
+      "model_candidates": []
+    },
+    {
+      "id": "block-conflict",
+      "required_assignments": ["diagrams:diagrams"],
+      "runner_reports": [
+        {"assignment": "diagrams:diagrams", "runner_candidate": "luna-medium", "source_report": "clean", "valid": true, "items": {"DDS-DIA-004": "PASS"}, "finding_ids": []},
+        {"assignment": "diagrams:diagrams", "runner_candidate": "luna-medium", "source_report": "final-b", "mutation": "conflicting duplicate", "valid": true, "items": {"DDS-DIA-004": "FAIL"}, "finding_ids": ["F-ARROW"]}
+      ],
+      "model_candidates": []
+    },
+    {
+      "id": "rank-cost-band",
+      "required_assignments": [],
+      "runner_reports": [],
+      "model_candidates": [
+        {"label": "slow-cheapest", "accuracy": 1.0, "estimated_credits": 100.0, "wall_seconds": 10.0},
+        {"label": "fast-within-band", "accuracy": 1.0, "estimated_credits": 112.0, "wall_seconds": 4.0},
+        {"label": "fast-outside-band", "accuracy": 1.0, "estimated_credits": 116.0, "wall_seconds": 1.0},
+        {"label": "cheap-lower-accuracy", "accuracy": 0.99, "estimated_credits": 1.0, "wall_seconds": 1.0}
+      ]
+    }
+  ]
+}

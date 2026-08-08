@@ -1,0 +1,19 @@
+You are reviewing one HTML documentation page. Return only JSON conforming to the supplied schema.
+
+Apply exactly these rules:
+- DOC-LANG: the html element has a non-empty lang attribute.
+- DOC-TITLE: title exists and is specific rather than empty or generic.
+- DOC-H1: the page has exactly one h1. If extra h1 elements have IDs, report each extra one.
+- DOC-IMG-ALT: every informative img has non-empty alt text.
+- DOC-LINK-TEXT: link text is descriptive; "click here" and "read more" fail.
+- DOC-HEADING-ORDER: heading levels do not skip a level.
+- DOC-LABEL: every form input has an explicitly associated label.
+- DOC-EMPTY-HREF: links do not use an empty href or "#" placeholder.
+- DOC-META-DESC: head contains a non-empty meta description.
+
+Report every violation and no other concerns. Set verdict to FAIL if issues is non-empty, otherwise PASS. Use the violating element's #id as locator when it has one. Otherwise use the lowercase element name (html, head, or title). For a duplicate h1, the first h1 is canonical and each later h1 is a violation. Evidence must be concise and based only on the HTML.
+
+HTML filename: {{fixture_name}}
+```html
+{{fixture_html}}
+```

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["status", "winner", "accuracy_evidence", "cost_evidence", "speed_evidence", "limitations", "recommendation"],
+  "properties": {
+    "status": {"enum": ["ACCEPTED", "REJECTED", "BLOCKED"]},
+    "winner": {"type": "string"},
+    "accuracy_evidence": {"type": "string"},
+    "cost_evidence": {"type": "string"},
+    "speed_evidence": {"type": "string"},
+    "limitations": {"type": "array", "items": {"type": "string"}},
+    "recommendation": {"type": "string"}
+  }
+}
