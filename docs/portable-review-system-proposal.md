@@ -2,7 +2,7 @@
 
 ## Approval Status
 
-Not approved for owner implementation. This document is a local handoff draft only.
+Not approved for owner implementation. This document is a local handoff draft only. It describes the original catalog-review experiment. Version 0.2.0 adds consumer review and an authoring skill; any future integration must explicitly scope those additions and verify them separately from the historical tournament evidence.
 
 ## Proposed Portable Artifacts
 

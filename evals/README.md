@@ -58,3 +58,11 @@ python3 -m evals.eval_harness score --stage wide
 Completed `run.json` files are reused, so rerunning a partially completed stage resumes at its first missing candidate/fixture pair. Move or remove a specific run directory intentionally before repeating that invocation.
 
 Do not commit `outputs/`; they are local run evidence and may be large.
+
+## Historical Review Architecture and Results
+
+The local checklist runner applies one supplied checklist to one page and returns item-level evidence. The review coordinator reconciles coverage and evidence and owns the integrated acceptance decision. Their definitions live in `agents/` at the repository root.
+
+The recorded runner tournament selected Luna medium; the recorded coordinator tournament selected Terra low. These are historical results on fixed fixtures, not guarantees about current models or certification of the current catalog. See [runner results](results/tournament-report.md), [coordinator results](results/coordinator-tournament-report.md), and the [portable integration proposal](../docs/portable-review-system-proposal.md). The fixtures remain fixed when the live design-system version changes so old results retain their original meaning.
+
+Normal page authoring uses the local creation skill and consumer review mode without running a model tournament.

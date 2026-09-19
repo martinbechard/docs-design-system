@@ -1,0 +1,18 @@
+# Consumer Documentation Checklist
+
+Apply to ordinary documentation and consumer examples using the matching adopted version's contracts. Conditional checks pass by demonstrated non-applicability when their feature is absent; missing evidence for a present feature is NOT TESTED.
+
+| ID | Observable pass criterion | Required evidence |
+| --- | --- | --- |
+| DDS-USE-001 | HTML declares language, UTF-8, responsive viewport, a meaningful title, and a working link to the adopted stylesheet. | Source and successful stylesheet load. |
+| DDS-USE-002 | Exact design-system metadata and visible footer version match the pinned asset bundle's VERSION; the source revision is recorded with the adoption evidence. | Three literal version values, bundle path, and source commit. |
+| DDS-USE-003 | A skip link precedes repeated content, reaches the unique main landmark, and is keyboard operable; there is one h1 and an ordered heading structure with unique, resolving IDs. | DOM inventory and first-Tab/activation trace. |
+| DDS-USE-004 | The supported header and footer classes are used, product identity is truthful, logos have appropriate alternatives when present, and the footer follows main. | Source, accessible names, and rendered layout; a logo is not mandatory. |
+| DDS-USE-005 | A multi-page suite has stable project-specific navigation labels/order and exactly one current destination; sequence links exist only for a defined reading order. A standalone page need not have suite or sequence navigation. | Comparison with suite pages or explicit standalone scope. |
+| DDS-USE-006 | Section navigation, when present, starts at body#top, uses the supported page-nav pattern, and resolves to the page's actual sections. Local page, asset, and fragment links resolve. | Link inventory and rendered navigation check. |
+| DDS-USE-007 | The page addresses its stated audience and task, contains accurate source-backed claims, and has no unfilled starter instructions unless explicitly reviewed as a template. | Semantic review against supplied sources; identify intentional template content. |
+| DDS-USE-008 | Adopted components suit their content: lists distinguish sequences from sets, tables represent tabular data, code retains whitespace, callouts convey meaningful context, and cards group peer concepts. Unresolved source variations are not presented as adopted contracts. | Component inventory and content-level judgment; do not require unused components. |
+| DDS-USE-009 | At desktop and narrow widths, navigation stays readable, columns stack when needed, and any wide content scrolls in its own container without page-wide horizontal overflow or hidden information. | Viewport sizes, screenshots or measured geometry, and inspection of every used component. |
+| DDS-USE-010 | All links and controls are keyboard reachable with visible focus; names and text alternatives are meaningful, and color is not the only carrier of meaning. | Keyboard trace, rendered focus, and accessibility inspection. |
+| DDS-USE-011 | Disclosures, forms, dialogs, and custom controls present on the page work as described, including applicable focus movement/return, Escape or close behavior, validation, errors, status, and recovery. No feature claims demonstration code provides unimplemented persistence or uploads. | Interaction traces for each present feature; state explicitly when none are present. |
+| DDS-USE-012 | Two-column heroes, tables, diagrams, and print layouts preserve content order and meaning where used; diagrams have text explanations and tables have usable headings. | Desktop/narrow/print evidence and semantics for the components present. |

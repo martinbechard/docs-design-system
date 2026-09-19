@@ -1,0 +1,44 @@
+<!doctype html>
+<!-- Copyright (c) 2026 Martin.Bechard@DevConsult.ca
+AI attribution: Generated with AI assistance by Northstar.
+Provides practical instructions for adopting the reusable documentation assets. -->
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="design-system-version" content="0.2.0"><title>Get Started · Documentation Design System</title><link rel="stylesheet" href="assets/design-system.css"></head>
+<body id="top">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="ds-header"><a class="site-brand" href="index.html"><img class="site-logo" src="assets/dev-methodology-logo.png" alt="DevConsult Canada logo"><span>Documentation Design System</span></a></header>
+  <nav class="suite-nav" aria-label="Design system pages">
+    <a href="index.html">Index</a><a href="getting-started.html" aria-current="page">Get started</a><a href="foundations.html">Foundations</a><a href="page-shell.html">Page shell</a><a href="content.html">Content</a><a href="data-display.html">Data display</a><a href="forms-and-actions.html">Forms</a><a href="diagrams.html">Diagrams</a><a href="accessibility.html">Accessibility</a><a href="variations.html">Variations</a><a href="source-inventory.html">Inventory</a>
+  </nav>
+<main id="main-content" tabindex="-1">
+<section class="hero" aria-labelledby="page-title"><span class="eyebrow">Authoring guide</span><h1 id="page-title">Create Your First Page</h1><p class="lede">Start with a working shell, write for your audience, and select adopted patterns for the content you need to explain.</p></section>
+<nav class="page-nav" aria-label="Page sections"><a href="#top">Top</a><a href="#copy">Copy</a><a href="#write">Write</a><a href="#preview">Preview</a><a href="#review">Review</a><a href="#agents">Agents</a><a href="#versions">Versions</a></nav>
+<section class="section" id="copy" aria-labelledby="copy-title"><h2 id="copy-title">1. Copy a Working Starter</h2><p>Use these commands to obtain a fresh checkout and create a consumer page. If you already have a checkout, start at its root and skip the first two commands. This creates a separate consumer site in a new directory named <code>my-docs</code>; choose a different name if it already exists.</p>
+<pre><code>git clone https://github.com/martinbechard/docs-design-system.git
+cd docs-design-system
+mkdir ../my-docs &amp;&amp; mkdir ../my-docs/assets &amp;&amp; \
+cp docs/design-system/assets/design-system.css ../my-docs/assets/ &amp;&amp; \
+cp docs/design-system/VERSION ../my-docs/assets/VERSION &amp;&amp; \
+cp docs/design-system/templates/page.html ../my-docs/index.html &amp;&amp; \
+python3 -c 'from pathlib import Path; p=Path("../my-docs/index.html"); p.write_text(p.read_text().replace("../assets/", "assets/"))'
+git rev-parse HEAD</code></pre>
+<p>Record the printed commit beside your copied assets so the adopted source can be recovered. Open the <a href="templates/page.html">starter preview</a> and <a href="examples/first-page.html">completed example</a> to compare their structure. Copy the CSS and version file from the same checkout as the template; do not link production pages to a moving “latest” stylesheet.</p>
+<pre><code>my-docs/
+├── index.html
+└── assets/
+    ├── design-system.css
+    └── VERSION</code></pre>
+</section>
+<section class="section" id="write" aria-labelledby="write-title"><h2 id="write-title">2. Write and Compose</h2><ol><li>Replace the title, product name, introduction, headings, and starter text with source-backed content for your audience.</li><li>Use <code>.ds-header</code>, <code>.ds-footer</code>, and <code>.page-nav</code> from the starter. Keep the skip link, unique main landmark, and exact version metadata.</li><li>Choose <a href="content.html">content patterns</a>, <a href="data-display.html">tables and metrics</a>, or <a href="diagrams.html">diagrams</a> when they help explain the subject. Do not populate a page with every component.</li><li>For a multi-page suite, use identical destination labels and order on every page and mark only the current page with <code>aria-current="page"</code>. Add previous/next links only when a reading sequence exists.</li><li>Use your own branding and truthful provenance. A text product identity works without a logo. Retain applicable copyright notices in copied source.</li></ol>
+<div class="callout"><h3>Static pages need no JavaScript</h3><p>The catalog’s <code>design-system.js</code> demonstrates forms and settings. It is not a general application runtime. Native <code>details</code> works without it. When adding custom interactions, implement and verify the required behavior, including keyboard operation, focus movement, validation, and recovery.</p></div>
+</section>
+<section class="section" id="preview" aria-labelledby="preview-title"><h2 id="preview-title">3. Preview Locally</h2><p>From the repository root, serve the copied site:</p><pre><code>python3 -m http.server 8000 --bind 127.0.0.1 --directory ../my-docs</code></pre><p>Open <code>http://localhost:8000/</code>. Stop the server with Ctrl+C. To preview this catalog instead, use <code>--directory docs/design-system</code>.</p></section>
+<section class="section" id="review" aria-labelledby="review-title"><h2 id="review-title">4. Review and Publish</h2><p>Review the rendered page and its source in consumer mode. Check desktop and narrow widths, keyboard navigation, local links and fragments, content accuracy, and every interaction present. A source-only check cannot prove visual or keyboard behavior.</p><p>Publish your consumer directory using your project’s static hosting workflow. In this repository, pushes to <code>main</code> automatically publish <code>docs/design-system/</code> through GitHub Pages. Files outside that folder are not included.</p></section>
+<section class="section" id="agents" aria-labelledby="agents-title"><h2 id="agents-title">Use with an Agent</h2><p>The repository contains two local skills. They are not automatically installed into your runtime. In a checkout, ask your agent to read the relevant file:</p><pre><code>Use skills/create-documentation-page/SKILL.md to create a page
+about our deployment process from the supplied project sources.
+Write it to my project’s docs folder and review it in consumer mode.
+
+Use skills/review-documentation-design-system/SKILL.md to review
+my page in consumer mode against its pinned design-system version.</code></pre><p>Keep the complete repository available when using these skills: they reference the catalog, starter, and each other by relative path. Review mode <code>catalog</code> is for maintaining this reference site; it includes specimen and historical evidence checks that do not apply to consumer documents.</p></section>
+<section class="section" id="versions" aria-labelledby="versions-title"><h2 id="versions-title">Adopt a Version Deliberately</h2><p>The current version is <strong>0.2.0</strong>, a usable draft before 1.0.0. Keep the exact version in the page metadata, visible footer, and copied <code>assets/VERSION</code>. An existing consumer remains pinned when this repository changes.</p><p>To upgrade, inspect the <a href="https://github.com/martinbechard/docs-design-system/blob/main/CHANGELOG.md">changelog</a>, replace assets from one selected checkout, apply required markup changes, and review the page before updating its declared version. Historical audit commits describe provenance; they are not asset versions.</p></section>
+</main><footer class="ds-footer"><p><span class="ds-version">Design system v0.2.0</span> · Authoring and adoption guide.</p></footer></body></html>

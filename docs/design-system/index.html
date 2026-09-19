@@ -8,8 +8,8 @@ Provides the entry point and navigation overview for the documentation design sy
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="design-system-version" content="0.1.0">
-  <meta name="description" content="Source-backed documentation design system for the dev-methodology HTML documentation suite.">
+  <meta name="design-system-version" content="0.2.0">
+  <meta name="description" content="Reusable patterns, shared styles, and authoring guidance for accessible HTML documentation.">
   <title>Documentation Design System</title>
   <link rel="stylesheet" href="assets/design-system.css">
 </head>
@@ -22,26 +22,26 @@ Provides the entry point and navigation overview for the documentation design sy
     </a>
   </header>
   <nav class="suite-nav" aria-label="Design system pages">
-    <a href="index.html" aria-current="page">Index</a><a href="foundations.html">Foundations</a><a href="page-shell.html">Page shell</a><a href="content.html">Content</a><a href="data-display.html">Data display</a><a href="forms-and-actions.html">Forms</a><a href="diagrams.html">Diagrams</a><a href="accessibility.html">Accessibility</a><a href="variations.html">Variations</a><a href="source-inventory.html">Inventory</a>
+    <a href="index.html" aria-current="page">Index</a><a href="getting-started.html">Get started</a><a href="foundations.html">Foundations</a><a href="page-shell.html">Page shell</a><a href="content.html">Content</a><a href="data-display.html">Data display</a><a href="forms-and-actions.html">Forms</a><a href="diagrams.html">Diagrams</a><a href="accessibility.html">Accessibility</a><a href="variations.html">Variations</a><a href="source-inventory.html">Inventory</a>
   </nav>
   <main id="main-content">
     <section class="hero hero--split" aria-labelledby="page-title">
       <div class="hero-copy">
-        <span class="eyebrow">Source-backed component catalog</span>
+        <span class="eyebrow">Create consistent HTML documentation</span>
         <h1 id="page-title">Documentation Design System</h1>
-        <p class="lede">This design system catalogs the visual, structural, interactive, and accessibility elements in the current <code>dev-methodology</code> HTML pages. It defines adopted documentation patterns and records unresolved source variations for later review.</p>
+        <p class="lede">Build readable, accessible documentation with a shared page shell, reusable styles, and adopted component patterns. Start with a working HTML page, choose components for your content, and review the result. Historical source variations remain research material rather than approved patterns.</p>
       </div>
-      <aside class="hero-principle" aria-label="Audit boundary">
-        <strong>Audit boundary</strong>
-        <p>Reviewed on 2026-08-08 at source commit <code>7e79cd3043ae</code>.</p>
-        <p>All 16 tracked HTML files were inspected: 11 documentation pages, one report example, and four test fixtures.</p>
+      <aside class="hero-principle" aria-label="Start creating">
+        <strong>Create your first page</strong>
+        <p><a href="getting-started.html">Follow the authoring guide</a>, open the <a href="templates/page.html">starter</a>, or explore a <a href="examples/first-page.html">completed example</a>.</p>
+        <p>Plain HTML and CSS. No build step is required for static pages.</p>
       </aside>
     </section>
 
     <section class="section" aria-labelledby="concerns-title">
       <div class="section-heading">
-        <h2 id="concerns-title">Cross-Cutting Concerns</h2>
-        <p>Each page defines one concern, presents live examples, and names the source patterns that supplied the examples.</p>
+        <h2 id="concerns-title">Choose Patterns for Your Content</h2>
+        <p>Use the foundations and page shell first, then select only the components your content needs. Each reference includes examples and source context.</p>
       </div>
       <div class="card-grid">
         <a class="card card--link" href="foundations.html"><span class="card-index">01</span><h3>Foundations</h3><p>Color, typography, spacing, width, radius, shadow, and light or dark theme families.</p><span class="path">foundations.html</span></a>
@@ -57,7 +57,7 @@ Provides the entry point and navigation overview for the documentation design sy
     </section>
 
     <section class="section" aria-labelledby="findings-title">
-      <div class="section-heading"><h2 id="findings-title">Audit Summary</h2><p>The source suite has a stable semantic shell and several purposeful but unsynchronized visual families.</p></div>
+      <div class="section-heading"><h2 id="findings-title">Origins and Adoption</h2><p>The original audit reviewed all 16 tracked HTML files in <code>dev-methodology</code> on 2026-08-08 at commit <code>7e79cd3043ae</code>: 11 documentation pages, one report example, and four test fixtures. These counts describe that historical snapshot, not the current catalog.</p></div>
       <div class="metric-grid">
         <div class="metric"><strong>11</strong><span>Primary documentation pages share the brand header, hero, and footer.</span></div>
         <div class="metric"><strong>10</strong><span>Detail pages share previous and next document navigation.</span></div>
@@ -70,6 +70,6 @@ Provides the entry point and navigation overview for the documentation design sy
       </div>
     </section>
   </main>
-  <footer class="ds-footer"><p><span class="ds-version">Design system v0.1.0</span> · Source snapshot <code>7e79cd3043ae</code> · Source pages remain unchanged.</p></footer>
+  <footer class="ds-footer"><p><span class="ds-version">Design system v0.2.0</span> · Source snapshot <code>7e79cd3043ae</code> · Source pages remain unchanged.</p></footer>
 </body>
 </html>
