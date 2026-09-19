@@ -2,6 +2,12 @@
 
 This project contains a local, approval-gated experiment for reviewing HTML documentation against the Documentation Design System. It does not modify or install artifacts into `dev-methodology`.
 
+## Live Documentation
+
+Browse the [Documentation Design System](https://martinbechard.github.io/docs-design-system/).
+
+The `Deploy documentation to GitHub Pages` workflow publishes `docs/design-system/` on every push to `main`. It can also be run manually from the repository's Actions tab. GitHub Pages uses GitHub Actions as its publishing source.
+
 ## Review Architecture
 
 The review system separates checklist execution from acceptance decisions:
